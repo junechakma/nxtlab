@@ -1,6 +1,6 @@
 import Hero from '../../components/sections/Hero';
 import { Reveal } from '../../components/ui/Reveal';
-import { ArrowRight, Plus, Mail, MapPin, ExternalLink, Trophy, Globe, Zap } from 'lucide-react';
+import { ArrowRight, Plus, Mail, MapPin, ExternalLink, Trophy, Globe, Zap, Linkedin } from 'lucide-react';
 import {
     getProjects,
     getPublications,
@@ -233,7 +233,8 @@ export default async function HomePage() {
             </section>
 
             {/* Collaborators */}
-            <section className="py-24 bg-slate-50 overflow-hidden">
+            {/* Collaborators */}
+            {/* <section className="py-24 bg-slate-50 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <SectionHeader title="Our Collaborators" subtitle="Global Network" />
 
@@ -247,32 +248,52 @@ export default async function HomePage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Mentors - Grid */}
             <section id="mentors" className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <SectionHeader title="Our People" subtitle="Leadership" />
+                    <SectionHeader title="Our People" subtitle="Researchers & Faculty" />
 
-                    <div className="grid md:grid-cols-2 gap-8 border-slate-200">
-                        {mentors.map((mentor, idx) => (
-                            <Reveal key={mentor.id} delay={idx * 100} variant="fade" className="bg-white">
-                                <div className="p-8 group border border-slate-200 hover:border-brand-500 transition-colors h-full flex flex-col md:flex-row gap-6 items-start">
-                                    <div className="w-32 h-32 flex-shrink-0 overflow-hidden rounded-full bg-slate-100 filter grayscale group-hover:grayscale-0 transition-all duration-500">
-                                        <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 border-slate-200">
+                        {mentors.slice(0, 6).map((mentor, idx) => (
+                            <Reveal key={mentor.id} delay={idx * 100} variant="fade" className="h-full">
+                                <div className="bg-white group border border-slate-200 hover:border-brand-500 transition-all duration-300 h-full flex flex-col p-8 hover:shadow-lg rounded-sm">
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className="w-20 h-20 overflow-hidden rounded-full bg-slate-100 border border-slate-100">
+                                            <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
+                                        </div>
+                                        <div className="flex gap-2 text-slate-400">
+                                            {mentor.email && (
+                                                <a href={`mailto:${mentor.email}`} className="p-2 hover:bg-slate-50 rounded-full hover:text-brand-600 transition-colors" title="Email">
+                                                    <Mail className="w-4 h-4" />
+                                                </a>
+                                            )}
+                                            {mentor.linkedIn && (
+                                                <a href={mentor.linkedIn} target="_blank" rel="noreferrer" className="p-2 hover:bg-slate-50 rounded-full hover:text-brand-600 transition-colors" title="LinkedIn">
+                                                    <Linkedin className="w-4 h-4" />
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="text-xl font-bold text-slate-900 mb-2">{mentor.name}</h4>
-                                        <p className="text-brand-600 text-sm font-medium mb-3 uppercase tracking-wide">{mentor.role}</p>
-                                        <p className="text-slate-500 text-sm leading-relaxed mb-4">{mentor.department}</p>
-                                        <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 hover:text-brand-600">
-                                            <Mail className="w-4 h-4" /> Contact
-                                        </a>
+
+                                    <div className="mb-6 flex-grow">
+                                        <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">{mentor.name}</h3>
+                                        <div className="text-brand-600 text-xs font-bold uppercase tracking-widest mb-3">{mentor.role}</div>
+                                        <p className="text-slate-500 text-sm mb-4 leading-relaxed border-l-2 border-slate-100 pl-3">
+                                            {mentor.department}
+                                        </p>
                                     </div>
                                 </div>
                             </Reveal>
                         ))}
                     </div>
+
+                    <Reveal delay={400} variant="fade" className="mt-16 text-center">
+                        <a href="/people" className="inline-flex items-center gap-2 text-lg font-bold border-b-2 border-brand-600 pb-1 hover:text-brand-600 transition-colors">
+                            Meet The Full Team <ArrowRight className="w-5 h-5" />
+                        </a>
+                    </Reveal>
                 </div>
             </section>
 

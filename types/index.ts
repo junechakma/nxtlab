@@ -30,6 +30,12 @@ export interface Mentor {
     role: string;
     department: string;
     image: string;
+    email?: string;
+    researchInterest?: string;
+    googleScholar?: string;
+    researchGate?: string;
+    linkedIn?: string;
+    orcid?: string;
 }
 
 export interface Event {

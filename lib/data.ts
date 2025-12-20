@@ -149,18 +149,84 @@ export const PUBLICATIONS: Publication[] = [
 export const MENTORS: Mentor[] = [
     {
         id: 'm1',
-        name: "Prof Dr. Mohammad Abu Yousuf",
-        role: "Vice Chancellor & Dean",
-        department: "Faculty of Cyber Physical System Engineering | Faculty of Software and Machine Intelligence Engineering",
-        image: "https://ui-avatars.com/api/?name=Mohammad+Abu+Yousuf&background=0ea5e9&color=fff&size=400&font-size=0.33"
+        name: "Md. Ashrafuzzaman",
+        role: "Assistant Professor",
+        department: "Department of Educational Technology and Engineering",
+        email: "ashraf0001@uftb.ac.bd",
+        researchInterest: "Educational Technology, Higher Education, Teacher Education, Curriculum, Assessment and Feedback, Language Education and AI in Education",
+        image: "https://ui-avatars.com/api/?name=Md+Ashrafuzzaman&background=0ea5e9&color=fff",
+        orcid: "https://orcid.org/0000-0003-2100-9998",
+        googleScholar: "https://scholar.google.com/citations?user=MdAshrafuzzaman", // Fallback/Placeholder as CSV link was shared format
+        researchGate: "https://www.researchgate.net/profile/Md_Uzzaman4",
+        linkedIn: "https://www.linkedin.com/in/md-ashrafuzzaman-27464a96"
     },
     {
         id: 'm2',
-        name: "Prof Dr. Md. Anwar Hussain",
-        role: "Treasurer & Dean",
-        department: "Faculty of Security and Communication Engineering | Faculty of Digital Transformation Engineering",
-        image: "https://ui-avatars.com/api/?name=Anwar+Hussain&background=0284c7&color=fff&size=400&font-size=0.33"
-    }
+        name: "Farzana Akter",
+        role: "Assistant Professor",
+        department: "IoT and Robotics Engineering",
+        email: "farzana0001@uftb.ac.bd",
+        researchInterest: "Medical Imaging, NLP, Data Analysis, Federated Learning",
+        image: "https://ui-avatars.com/api/?name=Farzana+Akter&background=0369a1&color=fff",
+        orcid: "https://orcid.org/0000-0003-3017-8742",
+        googleScholar: "https://scholar.google.com/citations?user=6fzSuRQAAAAJ&hl=en"
+    },
+    {
+        id: 'm3',
+        name: "Sharad Hasan",
+        role: "Lecturer",
+        department: "Department of Data Science and Engineering",
+        email: "sharad0001@uftb.ac.bd",
+        researchInterest: "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Data Science",
+        image: "https://ui-avatars.com/api/?name=Sharad+Hasan&background=0284c7&color=fff",
+        googleScholar: "https://scholar.google.com/citations?user=iLVghnEAAAAJ&hl=en",
+        linkedIn: "https://www.linkedin.com/in/sharad-hasan/"
+    },
+    {
+        id: 'm4',
+        name: "Md. Moshiur Rahman",
+        role: "Lecturer",
+        department: "Department of Software Engineering",
+        email: "moshiur0001@uftb.ac.bd",
+        researchInterest: "Machine Learning, Artificial Intelligence",
+        image: "https://ui-avatars.com/api/?name=Moshiur+Rahman&background=0369a1&color=fff",
+        linkedIn: "https://www.linkedin.com/in/md-moshiur-b35974194"
+    },
+    {
+        id: 'm5',
+        name: "Rubel Sheikh",
+        role: "Lecturer",
+        department: "Educational Technology and Engineering",
+        email: "rubel0003@uftb.ac.bd",
+        researchInterest: "Machine Learning, Deep Learning, NLP, Image Processing",
+        image: "https://ui-avatars.com/api/?name=Rubel+Sheikh&background=0c4a6e&color=fff",
+        orcid: "https://orcid.org/0000-0002-6824-340X",
+        researchGate: "https://www.researchgate.net/profile/Rubel-Sheikh",
+        linkedIn: "https://www.linkedin.com/in/rubel-sheikh-0bb572154/"
+    },
+    {
+        id: 'm6',
+        name: "Farhana Islam",
+        role: "Assistant Professor",
+        department: "Department of Educational Technology and Engineering",
+        email: "farhana0001@uftb.ac.bd",
+        researchInterest: "Machine Learning, Image Processing",
+        image: "https://ui-avatars.com/api/?name=Farhana+Islam&background=0ea5e9&color=fff"
+    },
+    {
+        id: 'm7',
+        name: "Tanjim Taharat Aurpa",
+        role: "Lecturer",
+        department: "Department of Data Science and Engineering",
+        email: "taurpa22@gmail.com",
+        researchInterest: "NLP, XAI",
+        image: "https://ui-avatars.com/api/?name=Tanjim+Taharat&background=0284c7&color=fff",
+        orcid: "https://orcid.org/0000-0003-1471-1316",
+        googleScholar: "https://scholar.google.com/citations?user=L2OPFJgAAAAJ&hl=en",
+        researchGate: "https://www.researchgate.net/profile/Tanjim-Taharat-Aurpa-2",
+        linkedIn: "https://www.linkedin.com/in/tanjim-taharat-aurpa/"
+    },
+
 ];
 
 export const EVENTS: Event[] = [
