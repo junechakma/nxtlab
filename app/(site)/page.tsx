@@ -1,7 +1,17 @@
 import Hero from '../../components/sections/Hero';
 import { Reveal } from '../../components/ui/Reveal';
-import { ArrowRight, Plus, Mail } from 'lucide-react';
-import { FOCUS_AREAS, STATS, EXTRA_STATS, PROJECTS, PUBLICATIONS, MENTORS, EVENTS, COLLABORATORS } from '../../lib/data';
+import { ArrowRight, Plus, Mail, MapPin, ExternalLink, Trophy, Globe, Zap } from 'lucide-react';
+import {
+    getProjects,
+    getPublications,
+    getMentors,
+    getEvents,
+    FOCUS_AREAS,
+    STATS,
+    EXTRA_STATS,
+    COLLABORATORS,
+    UNIVERSITY_NAME
+} from '../../lib/data';
 
 // Helper for Section Headers
 const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string }) => (
@@ -28,33 +38,17 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
     </div >
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+    const projects = await getProjects();
+    const publications = await getPublications();
+    const mentors = await getMentors();
+    const events = await getEvents();
+
     return (
         <div className="flex flex-col font-sans bg-white text-slate-900">
             <Hero />
 
-            {/* Research Stats Summary (Moved up for impact) */}
-            <section className="bg-slate-900 text-white py-20 border-y border-white/10 overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left divide-x divide-white/10">
-                        {STATS.map((stat, idx) => (
-                            <Reveal key={idx} delay={idx * 150} variant="blur-in" className="pl-8 first:pl-0">
-                                <div>
-                                    <div className="text-5xl md:text-6xl font-display font-bold text-white mb-2 tracking-tighter">
-                                        {stat.value}
-                                    </div>
-                                    <div className="flex items-center justify-center md:justify-start gap-3 text-slate-400 font-mono text-sm uppercase tracking-wider">
-                                        <stat.icon className="w-4 h-4 text-brand-500" />
-                                        {stat.label}
-                                    </div>
-                                </div>
-                            </Reveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* We Focus On */}
+            {/* We Focus On - Grid Layout */}
             <section id="focus" className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
                     <SectionHeader title="Research Focus" subtitle="Faculties & Departments" />
@@ -78,13 +72,52 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* Featured Projects (Limit 3) */}
+            {/* Discover / Stats Strip */}
+            <section className="bg-slate-900 text-white py-20 border-y border-white/10 overflow-hidden">
+                <div className="container mx-auto px-6">
+                    {/* Main Stats Row */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left divide-x divide-white/10">
+                        {STATS.map((stat, idx) => (
+                            <Reveal key={idx} delay={idx * 150} variant="blur-in" className="pl-8 first:pl-0">
+                                <div>
+                                    <div className="text-5xl md:text-6xl font-display font-bold text-white mb-2 tracking-tighter">
+                                        {stat.value}
+                                    </div>
+                                    <div className="flex items-center justify-center md:justify-start gap-3 text-slate-400 font-mono text-sm uppercase tracking-wider">
+                                        <stat.icon className="w-4 h-4 text-brand-500" />
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+
+                    {/* Extra Stats Row */}
+                    <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left divide-x divide-white/10">
+                        {EXTRA_STATS.map((stat, idx) => (
+                            <Reveal key={idx} delay={idx * 150} variant="blur-in" className="pl-8 first:pl-0">
+                                <div>
+                                    <div className="text-5xl md:text-6xl font-display font-bold text-white mb-2 tracking-tighter">
+                                        {stat.value}
+                                    </div>
+                                    <div className="flex items-center justify-center md:justify-start gap-3 text-slate-400 font-mono text-sm uppercase tracking-wider">
+                                        {stat.icon && <stat.icon className="w-4 h-4 text-brand-500" />}
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Projects - Masonry/Editorial Style */}
             <section id="projects" className="py-16 md:py-32 bg-slate-50 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <SectionHeader title="Featured Projects" subtitle="Research Activities" />
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {PROJECTS.slice(0, 3).map((project, index) => (
+                        {projects.map((project, index) => (
                             <Reveal
                                 key={project.id}
                                 delay={index * 150}
@@ -124,8 +157,83 @@ export default function HomePage() {
                 </div>
             </section>
 
+            {/* Publications - Technical List */}
+            <section id="publications" className="py-16 md:py-32 bg-white overflow-hidden">
+                <div className="container mx-auto px-6">
+                    <div className="flex flex-col lg:flex-row gap-16">
+                        <div className="lg:w-1/3">
+                            <Reveal variant="fade">
+                                <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Publications</h2>
+                                <p className="text-slate-500 mb-8 leading-relaxed">
+                                    Our research findings are regularly published in top-tier journals including Physics Open, Sensing and Bio-Sensing Research, and more.
+                                </p>
+                                <a href="/publications" className="text-brand-600 font-bold hover:underline">Browse Archive &rarr;</a>
+                            </Reveal>
+                        </div>
+
+                        <div className="lg:w-2/3">
+                            <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
+                                {publications.map((pub, idx) => (
+                                    <Reveal key={pub.id} delay={idx * 100} variant="slide-left">
+                                        <div className="py-8 group flex flex-col md:flex-row gap-6 md:items-start hover:bg-slate-50 transition-colors px-4 -mx-4">
+                                            <div className="md:w-24 flex-shrink-0">
+                                                <span className="font-mono text-sm text-slate-400">{pub.year}</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h4 className="text-xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-brand-600 transition-colors">
+                                                    {pub.title}
+                                                </h4>
+                                                <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm text-slate-500">
+                                                    <span>{pub.authors}</span>
+                                                    <span className="text-slate-300">|</span>
+                                                    <span className="font-medium text-slate-700">{pub.journal}</span>
+                                                </div>
+                                            </div>
+                                            <div className="md:w-32 flex justify-end">
+                                                <a href={pub.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-brand-600 border border-slate-200 px-4 py-2 rounded-none hover:border-brand-600 transition-colors">
+                                                    View <ExternalLink className="w-4 h-4" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </Reveal>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Achievements - Minimal */}
+            <section className="py-24 bg-slate-900 text-white overflow-hidden">
+                <div className="container mx-auto px-6">
+                    <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-t border-b border-white/10">
+                        <Reveal variant="slide-up" className="py-12 md:px-12 first:pl-0 text-center md:text-left">
+                            <div>
+                                <Trophy className="w-12 h-12 text-brand-500 mb-6 mx-auto md:mx-0" />
+                                <h3 className="text-xl font-bold mb-2">Hackathon Champions</h3>
+                                <p className="text-slate-400 text-sm">IOTRIX 2025 - Team_NULL()</p>
+                            </div>
+                        </Reveal>
+                        <Reveal variant="slide-up" delay={200} className="py-12 md:px-12 text-center md:text-left">
+                            <div>
+                                <Globe className="w-12 h-12 text-brand-500 mb-6 mx-auto md:mx-0" />
+                                <h3 className="text-xl font-bold mb-2">Global Collaborations</h3>
+                                <p className="text-slate-400 text-sm">Partnered with Korea University, JICA</p>
+                            </div>
+                        </Reveal>
+                        <Reveal variant="slide-up" delay={400} className="py-12 md:px-12 text-center md:text-left">
+                            <div>
+                                <Zap className="w-12 h-12 text-brand-500 mb-6 mx-auto md:mx-0" />
+                                <h3 className="text-xl font-bold mb-2">Ideathon Runners Up</h3>
+                                <p className="text-slate-400 text-sm">MU CSE Fest 2025 - The Flying Dutchman</p>
+                            </div>
+                        </Reveal>
+                    </div>
+                </div>
+            </section>
+
             {/* Collaborators */}
-            <section className="py-24 bg-white overflow-hidden">
+            <section className="py-24 bg-slate-50 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <SectionHeader title="Our Collaborators" subtitle="Global Network" />
 
@@ -134,6 +242,68 @@ export default function HomePage() {
                             <Reveal key={idx} delay={idx * 50} variant="zoom-in">
                                 <div className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 p-4 bg-white shadow-sm border border-slate-100 flex items-center justify-center aspect-square">
                                     <img src={partner.image} alt={partner.name} className="max-w-full max-h-full object-contain" />
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Mentors - Grid */}
+            <section id="mentors" className="py-16 md:py-32 bg-white">
+                <div className="container mx-auto px-6">
+                    <SectionHeader title="Our People" subtitle="Leadership" />
+
+                    <div className="grid md:grid-cols-2 gap-8 border-slate-200">
+                        {mentors.map((mentor, idx) => (
+                            <Reveal key={mentor.id} delay={idx * 100} variant="fade" className="bg-white">
+                                <div className="p-8 group border border-slate-200 hover:border-brand-500 transition-colors h-full flex flex-col md:flex-row gap-6 items-start">
+                                    <div className="w-32 h-32 flex-shrink-0 overflow-hidden rounded-full bg-slate-100 filter grayscale group-hover:grayscale-0 transition-all duration-500">
+                                        <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-xl font-bold text-slate-900 mb-2">{mentor.name}</h4>
+                                        <p className="text-brand-600 text-sm font-medium mb-3 uppercase tracking-wide">{mentor.role}</p>
+                                        <p className="text-slate-500 text-sm leading-relaxed mb-4">{mentor.department}</p>
+                                        <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 hover:text-brand-600">
+                                            <Mail className="w-4 h-4" /> Contact
+                                        </a>
+                                    </div>
+                                </div>
+                            </Reveal>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Events - Clean Layout */}
+            <section id="events" className="py-16 md:py-32 bg-slate-50 border-t border-slate-200 overflow-hidden">
+                <div className="container mx-auto px-6">
+                    <SectionHeader title="Recent Events" subtitle="Workshops & Seminars" />
+
+                    <div className="grid lg:grid-cols-3 gap-12">
+                        {events.map((event, idx) => (
+                            <Reveal key={event.id} delay={idx * 150} variant="slide-right">
+                                <div className="group border-t-2 border-slate-200 pt-8 hover:border-brand-600 transition-colors h-full flex flex-col">
+                                    <div className="flex justify-between items-start mb-6">
+                                        <div className="flex flex-col">
+                                            <span className="text-4xl font-display font-bold text-slate-900 mb-1">{event.date.split(' ')[0]}</span>
+                                            <span className="text-sm font-mono uppercase text-slate-500 tracking-widest">{event.date.split(' ').slice(1).join(' ')}</span>
+                                        </div>
+                                        <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition-all">
+                                            <ArrowRight className="w-4 h-4" />
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand-600 transition-colors leading-tight">
+                                        {event.title}
+                                    </h3>
+                                    <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
+                                        <MapPin className="w-4 h-4" />
+                                        {event.location}
+                                    </div>
+                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                        {event.description}
+                                    </p>
                                 </div>
                             </Reveal>
                         ))}
