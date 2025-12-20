@@ -2,25 +2,33 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play, Pause } from 'lucide-react';
-import { CAROUSEL_SLIDES } from '../constants';
+import { getHeroSlides } from '../../lib/data';
+import { Slide } from '../../types';
 
 const Hero: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
+    const [slides, setSlides] = useState<Slide[]>([]);
 
     useEffect(() => {
-        if (!isPlaying) return;
+        getHeroSlides().then(setSlides);
+    }, []);
+
+    useEffect(() => {
+        if (!isPlaying || slides.length === 0) return;
 
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % CAROUSEL_SLIDES.length);
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 6000);
 
         return () => clearInterval(timer);
-    }, [isPlaying]);
+    }, [isPlaying, slides]);
+
+    if (slides.length === 0) return null;
 
     return (
         <div className="relative h-screen w-full overflow-hidden bg-slate-900">
-            {CAROUSEL_SLIDES.map((slide, index) => (
+            {slides.map((slide, index) => (
                 <div
                     key={slide.id}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
@@ -68,7 +76,7 @@ const Hero: React.FC = () => {
                 <div className="container mx-auto px-6 py-4 md:py-0 md:h-20 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="flex items-center gap-8 w-full md:w-auto justify-between md:justify-start">
                         <div className="flex gap-1">
-                            {CAROUSEL_SLIDES.map((_, idx) => (
+                            {slides.map((_, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => setCurrentSlide(idx)}
@@ -78,7 +86,7 @@ const Hero: React.FC = () => {
                             ))}
                         </div>
                         <div className="text-white/40 font-mono text-xs">
-                            0{currentSlide + 1} / 0{CAROUSEL_SLIDES.length}
+                            0{currentSlide + 1} / 0{slides.length}
                         </div>
                     </div>
 

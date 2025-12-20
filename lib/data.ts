@@ -211,3 +211,24 @@ export const COLLABORATORS = [
     { name: "DEA", image: "https://uftb.ac.bd/uploads/topics/17371836184539.jpg" },
     { name: "Mojaru", image: "https://uftb.ac.bd/uploads/topics/17371833137415.jpg" }
 ];
+
+// Data Fetching Simulators (Simulation of Database usage)
+export async function getProjects() {
+    return PROJECTS;
+}
+
+export async function getPublications() {
+    return PUBLICATIONS;
+}
+
+export async function getMentors() {
+    return MENTORS;
+}
+
+export async function getEvents() {
+    return EVENTS;
+}
+
+export async function getHeroSlides() {
+    return CAROUSEL_SLIDES;
+}
