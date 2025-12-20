@@ -35,7 +35,7 @@ const Navigation: React.FC = () => {
 
     // Links mapped to Multi-Page structure
     const navLinks = [
-        { name: 'Research Areas', href: '/#focus' }, // Anchor on home
+        { name: 'Home', href: '/' },
         { name: 'Projects', href: '/projects' },
         { name: 'Publications', href: '/publications' },
         { name: 'People', href: '/people' },
@@ -70,7 +70,7 @@ const Navigation: React.FC = () => {
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-6 xl:gap-10">
                     {navLinks.map((link) => {
-                        const isActive = link.href === '/#focus'
+                        const isActive = link.href === '/'
                             ? pathname === '/'
                             : pathname.startsWith(link.href);
 
@@ -79,8 +79,8 @@ const Navigation: React.FC = () => {
                                 key={link.name}
                                 href={link.href}
                                 className={`text-sm tracking-wide transition-all hover:tracking-wider ${isActive
-                                        ? (isDarkText ? 'text-brand-600 font-bold' : 'text-white font-bold border-b-2 border-white pb-1')
-                                        : (isDarkText ? 'text-slate-600 font-medium hover:text-brand-600' : 'text-slate-300 font-medium hover:text-white')
+                                    ? (isDarkText ? 'text-brand-600 font-bold' : 'text-white font-bold border-b-2 border-white pb-1')
+                                    : (isDarkText ? 'text-slate-600 font-medium hover:text-brand-600' : 'text-slate-300 font-medium hover:text-white')
                                     }`}
                             >
                                 {link.name}
