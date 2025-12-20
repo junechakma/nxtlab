@@ -69,16 +69,24 @@ const Navigation: React.FC = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-6 xl:gap-10">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className={`text-sm font-medium tracking-wide transition-all hover:tracking-wider ${isDarkText ? 'text-slate-600 hover:text-brand-600' : 'text-slate-300 hover:text-white'
-                                }`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isActive = link.href === '/#focus'
+                            ? pathname === '/'
+                            : pathname.startsWith(link.href);
+
+                        return (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={`text-sm tracking-wide transition-all hover:tracking-wider ${isActive
+                                        ? (isDarkText ? 'text-brand-600 font-bold' : 'text-white font-bold border-b-2 border-white pb-1')
+                                        : (isDarkText ? 'text-slate-600 font-medium hover:text-brand-600' : 'text-slate-300 font-medium hover:text-white')
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                     <Link href="/contact" className={`flex items-center gap-2 px-6 py-2 border text-sm font-semibold transition-all hover:bg-brand-600 hover:border-brand-600 hover:text-white ${isDarkText ? 'border-slate-900 text-slate-900' : 'border-white text-white'
                         }`}>
                         Contact Us <ArrowRight className="w-4 h-4" />

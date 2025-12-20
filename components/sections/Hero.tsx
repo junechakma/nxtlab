@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
                         <div className="max-w-4xl space-y-8">
                             <div className="flex items-center gap-4 animate-fade-in">
                                 <span className="h-[1px] w-12 bg-brand-500"></span>
-                                <span className="text-brand-400 font-mono text-sm tracking-widest uppercase">
+                                <span className="text-brand-500 font-mono text-sm tracking-widest uppercase">
                                     Featured Research
                                 </span>
                             </div>
