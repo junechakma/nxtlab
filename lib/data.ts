@@ -132,7 +132,7 @@ export const PUBLICATIONS: Publication[] = [
 
 export const MENTORS: Mentor[] = [
     {
-        id: 'm1',
+        id: 'm3',
         name: "Md. Ashrafuzzaman",
         role: "Assistant Professor",
         department: "Department of Educational Technology and Engineering",
@@ -156,49 +156,7 @@ export const MENTORS: Mentor[] = [
         googleScholar: "https://scholar.google.com/citations?user=6fzSuRQAAAAJ&hl=en"
     },
     {
-        id: 'm3',
-        name: "Farhana Islam",
-        role: "Assistant Professor",
-        department: "Department of Educational Technology and Engineering",
-        email: "nxtlab8@gmail.com",
-        researchInterest: "Machine Learning, Image Processing",
-        image: "/assets/2.png"
-    },
-    {
-        id: 'm4',
-        name: "Sharad Hasan",
-        role: "Lecturer",
-        department: "Department of Data Science and Engineering",
-        email: "nxtlab8@gmail.com",
-        researchInterest: "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Data Science",
-        image: "/assets/5.png",
-        googleScholar: "https://scholar.google.com/citations?user=iLVghnEAAAAJ&hl=en",
-        linkedIn: "https://www.linkedin.com/in/sharad-hasan/"
-    },
-    {
-        id: 'm5',
-        name: "Md. Moshiur Rahman",
-        role: "Lecturer",
-        department: "Department of Software Engineering",
-        email: "nxtlab8@gmail.com",
-        researchInterest: "Machine Learning, Artificial Intelligence",
-        image: "/assets/3.png",
-        linkedIn: "https://www.linkedin.com/in/md-moshiur-b35974194"
-    },
-    {
-        id: 'm6',
-        name: "Rubel Sheikh",
-        role: "Lecturer",
-        department: "Educational Technology and Engineering",
-        email: "nxtlab8@gmail.com",
-        researchInterest: "Machine Learning, Deep Learning, NLP, Image Processing",
-        image: "/assets/4.png",
-        orcid: "https://orcid.org/0000-0002-6824-340X",
-        researchGate: "https://www.researchgate.net/profile/Rubel-Sheikh",
-        linkedIn: "https://www.linkedin.com/in/rubel-sheikh-0bb572154/"
-    },
-    {
-        id: 'm7',
+        id: 'm1',
         name: "Tanjim Taharat Aurpa",
         role: "Lecturer",
         department: "Department of Data Science and Engineering",
@@ -210,7 +168,48 @@ export const MENTORS: Mentor[] = [
         researchGate: "https://www.researchgate.net/profile/Tanjim-Taharat-Aurpa-2",
         linkedIn: "https://www.linkedin.com/in/tanjim-taharat-aurpa/"
     },
-
+    {
+        id: 'm4',
+        name: "Farhana Islam",
+        role: "Assistant Professor",
+        department: "Department of Educational Technology and Engineering",
+        email: "nxtlab8@gmail.com",
+        researchInterest: "Machine Learning, Image Processing",
+        image: "/assets/2.png"
+    },
+    {
+        id: 'm6',
+        name: "Md. Moshiur Rahman",
+        role: "Lecturer",
+        department: "Department of Software Engineering",
+        email: "nxtlab8@gmail.com",
+        researchInterest: "Machine Learning, Artificial Intelligence",
+        image: "/assets/3.png",
+        linkedIn: "https://www.linkedin.com/in/md-moshiur-b35974194"
+    },
+    {
+        id: 'm7',
+        name: "Rubel Sheikh",
+        role: "Lecturer",
+        department: "Educational Technology and Engineering",
+        email: "nxtlab8@gmail.com",
+        researchInterest: "Machine Learning, Deep Learning, NLP, Image Processing",
+        image: "/assets/4.png",
+        orcid: "https://orcid.org/0000-0002-6824-340X",
+        researchGate: "https://www.researchgate.net/profile/Rubel-Sheikh",
+        linkedIn: "https://www.linkedin.com/in/rubel-sheikh-0bb572154/"
+    },
+    {
+        id: 'm5',
+        name: "Sharad Hasan",
+        role: "Lecturer",
+        department: "Department of Data Science and Engineering",
+        email: "nxtlab8@gmail.com",
+        researchInterest: "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Data Science",
+        image: "/assets/5.png",
+        googleScholar: "https://scholar.google.com/citations?user=iLVghnEAAAAJ&hl=en",
+        linkedIn: "https://www.linkedin.com/in/sharad-hasan/"
+    }
 ];
 
 export const EVENTS: Event[] = [

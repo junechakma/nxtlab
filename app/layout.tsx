@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FutureTech Lab - UFTB",
-  description: "Research and Innovation at University of Frontier Technology Bangladesh",
+  title: "FutureTech Lab - NxTlab",
+  description: "Research and Innovation at Nxtlab",
 };
 
 export default function RootLayout({

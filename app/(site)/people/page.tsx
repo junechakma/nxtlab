@@ -1,10 +1,14 @@
+"use client";
 
 import { Reveal } from '../../../components/ui/Reveal';
-import { getMentors } from '../../../lib/data';
+import { MENTORS } from '../../../lib/data';
 import { Mail, Linkedin, Globe, BookOpen, GraduationCap, Link as LinkIcon, ExternalLink } from 'lucide-react';
+import { ImageModal } from '../../../components/ui/ImageModal';
+import { useState } from 'react';
 
-export default async function PeoplePage() {
-    const mentors = await getMentors();
+export default function PeoplePage() {
+    const mentors = MENTORS;
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     return (
         <div className="pt-32 pb-20 container mx-auto px-6">
@@ -22,7 +26,10 @@ export default async function PeoplePage() {
                     <Reveal key={mentor.id} delay={idx * 100} variant="fade" className="h-full">
                         <div className="bg-white group border border-slate-200 hover:border-brand-500 transition-all duration-300 h-full flex flex-col p-8 hover:shadow-lg rounded-sm">
                             <div className="flex items-start justify-between mb-6">
-                                <div className="w-20 h-20 overflow-hidden rounded-full bg-slate-100 border border-slate-100">
+                                <div
+                                    className="w-20 h-20 overflow-hidden rounded-full bg-slate-100 border border-slate-100 cursor-pointer"
+                                    onClick={() => setSelectedImage(mentor.image)}
+                                >
                                     <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="flex gap-2 text-slate-400">
@@ -77,6 +84,12 @@ export default async function PeoplePage() {
                     </Reveal>
                 ))}
             </div>
+
+            <ImageModal
+                isOpen={!!selectedImage}
+                imageSrc={selectedImage}
+                onClose={() => setSelectedImage(null)}
+            />
         </div>
     );
 }
