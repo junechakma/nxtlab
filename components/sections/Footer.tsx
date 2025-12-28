@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <Mail className="w-5 h-5 text-brand-500 shrink-0" />
-                                    <a href="mailto:info@uftb.ac.bd" className="hover:text-white">info@uftb.ac.bd</a>
+                                    <a href="mailto:nxtlab8@gmail.com" className="hover:text-white">nxtlab8@gmail.com</a>
                                 </li>
                                 <li className="flex items-center gap-3">
                                     <Phone className="w-5 h-5 text-brand-500 shrink-0" />

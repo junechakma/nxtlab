@@ -33,7 +33,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <strong className="block text-slate-900 mb-1">Email Us</strong>
-                                    <a href="mailto:info@uftb.ac.bd" className="hover:text-brand-600 transition-colors">info@uftb.ac.bd</a>
+                                    <a href="mailto:nxtlab8@gmail.com" className="hover:text-brand-600 transition-colors">nxtlab8@gmail.com</a>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4">

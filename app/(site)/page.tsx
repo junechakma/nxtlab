@@ -1,14 +1,17 @@
+"use client";
+
 import Hero from '../../components/sections/Hero';
 import { Reveal } from '../../components/ui/Reveal';
 import { ArrowRight, Plus, Mail, MapPin, ExternalLink, Trophy, Globe, Zap, Linkedin } from 'lucide-react';
+import { ImageModal } from '../../components/ui/ImageModal';
+import { useState } from 'react';
 import {
-    getProjects,
-    getPublications,
-    getMentors,
-    getEvents,
+    PROJECTS,
+    PUBLICATIONS,
+    MENTORS,
+    EVENTS,
     FOCUS_AREAS,
     STATS,
-    EXTRA_STATS,
     COLLABORATORS,
     UNIVERSITY_NAME
 } from '../../lib/data';
@@ -38,11 +41,13 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
     </div >
 );
 
-export default async function HomePage() {
-    const projects = await getProjects();
-    const publications = await getPublications();
-    const mentors = await getMentors();
-    const events = await getEvents();
+export default function HomePage() {
+    const projects = PROJECTS;
+    const publications = PUBLICATIONS;
+    const mentors = MENTORS;
+    const events = EVENTS;
+
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     return (
         <div className="flex flex-col font-sans bg-white text-slate-900">
@@ -76,32 +81,15 @@ export default async function HomePage() {
             <section className="bg-slate-900 text-white py-20 border-y border-white/10 overflow-hidden">
                 <div className="container mx-auto px-6">
                     {/* Main Stats Row */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left divide-x divide-white/10">
+                    <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-t border-b border-white/10">
                         {STATS.map((stat, idx) => (
-                            <Reveal key={idx} delay={idx * 150} variant="blur-in" className="pl-8 first:pl-0">
+                            <Reveal key={idx} delay={idx * 150} variant="blur-in" className="py-12 md:px-12 first:pl-0 text-center md:text-left">
                                 <div>
                                     <div className="text-5xl md:text-6xl font-display font-bold text-white mb-2 tracking-tighter">
                                         {stat.value}
                                     </div>
                                     <div className="flex items-center justify-center md:justify-start gap-3 text-slate-400 font-mono text-sm uppercase tracking-wider">
                                         <stat.icon className="w-4 h-4 text-brand-500" />
-                                        {stat.label}
-                                    </div>
-                                </div>
-                            </Reveal>
-                        ))}
-                    </div>
-
-                    {/* Extra Stats Row */}
-                    <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left divide-x divide-white/10">
-                        {EXTRA_STATS.map((stat, idx) => (
-                            <Reveal key={idx} delay={idx * 150} variant="blur-in" className="pl-8 first:pl-0">
-                                <div>
-                                    <div className="text-5xl md:text-6xl font-display font-bold text-white mb-2 tracking-tighter">
-                                        {stat.value}
-                                    </div>
-                                    <div className="flex items-center justify-center md:justify-start gap-3 text-slate-400 font-mono text-sm uppercase tracking-wider">
-                                        {stat.icon && <stat.icon className="w-4 h-4 text-brand-500" />}
                                         {stat.label}
                                     </div>
                                 </div>
@@ -203,32 +191,21 @@ export default async function HomePage() {
                 </div>
             </section>
 
-            {/* Achievements - Minimal */}
+            {/* Call to Action */}
             <section className="py-24 bg-slate-900 text-white overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-t border-b border-white/10">
-                        <Reveal variant="slide-up" className="py-12 md:px-12 first:pl-0 text-center md:text-left">
-                            <div>
-                                <Trophy className="w-12 h-12 text-brand-500 mb-6 mx-auto md:mx-0" />
-                                <h3 className="text-xl font-bold mb-2">Hackathon Champions</h3>
-                                <p className="text-slate-400 text-sm">IOTRIX 2025 - Team_NULL()</p>
-                            </div>
-                        </Reveal>
-                        <Reveal variant="slide-up" delay={200} className="py-12 md:px-12 text-center md:text-left">
-                            <div>
-                                <Globe className="w-12 h-12 text-brand-500 mb-6 mx-auto md:mx-0" />
-                                <h3 className="text-xl font-bold mb-2">Global Collaborations</h3>
-                                <p className="text-slate-400 text-sm">Partnered with Korea University, JICA</p>
-                            </div>
-                        </Reveal>
-                        <Reveal variant="slide-up" delay={400} className="py-12 md:px-12 text-center md:text-left">
-                            <div>
-                                <Zap className="w-12 h-12 text-brand-500 mb-6 mx-auto md:mx-0" />
-                                <h3 className="text-xl font-bold mb-2">Ideathon Runners Up</h3>
-                                <p className="text-slate-400 text-sm">MU CSE Fest 2025 - The Flying Dutchman</p>
-                            </div>
-                        </Reveal>
-                    </div>
+                <div className="container mx-auto px-6 text-center">
+                    <Reveal variant="fade">
+                        <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Join Our Research Community</h2>
+                        <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                            We are always looking for passionate students and collaborators to work on cutting-edge technologies. Shape the future with us.
+                        </p>
+                        <a
+                            href="mailto:nxtlab8@gmail.com"
+                            className="inline-flex items-center gap-2 bg-brand-600 text-white px-8 py-4 rounded-sm font-bold tracking-wide hover:bg-brand-500 transition-all transform hover:-translate-y-1"
+                        >
+                            Apply Now <ArrowRight className="w-5 h-5" />
+                        </a>
+                    </Reveal>
                 </div>
             </section>
 
@@ -260,7 +237,10 @@ export default async function HomePage() {
                             <Reveal key={mentor.id} delay={idx * 100} variant="fade" className="h-full">
                                 <div className="bg-white group border border-slate-200 hover:border-brand-500 transition-all duration-300 h-full flex flex-col p-8 hover:shadow-lg rounded-sm">
                                     <div className="flex items-start justify-between mb-6">
-                                        <div className="w-20 h-20 overflow-hidden rounded-full bg-slate-100 border border-slate-100">
+                                        <div
+                                            className="w-20 h-20 overflow-hidden rounded-full bg-slate-100 border border-slate-100 cursor-pointer"
+                                            onClick={() => setSelectedImage(mentor.image)}
+                                        >
                                             <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
                                         </div>
                                         <div className="flex gap-2 text-slate-400">
@@ -302,35 +282,17 @@ export default async function HomePage() {
                 <div className="container mx-auto px-6">
                     <SectionHeader title="Recent Events" subtitle="Workshops & Seminars" />
 
-                    <div className="grid lg:grid-cols-3 gap-12">
-                        {events.map((event, idx) => (
-                            <Reveal key={event.id} delay={idx * 150} variant="slide-right">
-                                <div className="group border-t-2 border-slate-200 pt-8 hover:border-brand-600 transition-colors h-full flex flex-col">
-                                    <div className="flex justify-between items-start mb-6">
-                                        <div className="flex flex-col">
-                                            <span className="text-4xl font-display font-bold text-slate-900 mb-1">{event.date.split(' ')[0]}</span>
-                                            <span className="text-sm font-mono uppercase text-slate-500 tracking-widest">{event.date.split(' ').slice(1).join(' ')}</span>
-                                        </div>
-                                        <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition-all">
-                                            <ArrowRight className="w-4 h-4" />
-                                        </div>
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand-600 transition-colors leading-tight">
-                                        {event.title}
-                                    </h3>
-                                    <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
-                                        <MapPin className="w-4 h-4" />
-                                        {event.location}
-                                    </div>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
-                                        {event.description}
-                                    </p>
-                                </div>
-                            </Reveal>
-                        ))}
+                    <div className="flex flex-col items-center justify-center py-12 text-center">
+                        <p className="text-xl text-slate-400 font-medium">No events for now</p>
                     </div>
                 </div>
             </section>
+
+            <ImageModal
+                isOpen={!!selectedImage}
+                imageSrc={selectedImage}
+                onClose={() => setSelectedImage(null)}
+            />
         </div>
     );
 }

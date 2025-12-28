@@ -151,7 +151,7 @@ const Navigation: React.FC = () => {
                         <div className="mt-8 grid grid-cols-2 gap-4 text-sm text-slate-500 font-mono uppercase tracking-widest">
                             <div>
                                 <span className="block text-slate-300 mb-1">Email</span>
-                                info@uftb.ac.bd
+                                nxtlab8@gmail.com
                             </div>
                             <div>
                                 <span className="block text-slate-300 mb-1">Phone</span>

@@ -7,34 +7,28 @@ export const UNIVERSITY_NAME = "University of Frontier Technology Bangladesh";
 export const CAROUSEL_SLIDES: Slide[] = [
     {
         id: 1,
-        image: "https://uftb.ac.bd/uploads/topics/17648358986492.jpg",
-        title: "Award Winning Innovation",
-        subtitle: "IoT & Robotics Engineering Team secures 1st Runner-Up at IOTRIX 2025 Hackathon."
+        image: "/assets/iot.jpg",
+        title: "IoT & Robotics",
+        subtitle: "Dept. of Internet of Things and Robotics Engineering developing autonomous systems and smart sensors."
     },
     {
         id: 2,
-        image: "https://uftb.ac.bd/uploads/topics/17638698508303.jpeg",
-        title: "Excellence in Coding",
-        subtitle: "UFTB's 'The Flying Dutchman' wins big at MU CSE Fest 2025 Ideathon."
-    },
-    {
-        id: 3,
-        image: "https://images.unsplash.com/photo-1581093458791-9f302e6d8359?q=80&w=2070&auto=format&fit=crop",
-        title: "Pioneering Research",
-        subtitle: "Advancing Deep Learning, Bioinformatics, and Smart Systems at Nxtlab."
+        image: "/assets/datascience.jpg",
+        title: "Data Science & Engineering",
+        subtitle: "Advanced analytics, machine learning models, and big data processing."
     }
 ];
 
 export const FOCUS_AREAS = [
     {
-        title: "Cyber Security Engineering",
-        description: "Faculty of Security and Communication Engineering focusing on cryptographic algorithms and network defense.",
-        icon: Lock
-    },
-    {
         title: "IoT and Robotics",
         description: "Dept. of Internet of Things and Robotics Engineering developing autonomous systems and smart sensors.",
         icon: Cpu
+    },
+    {
+        title: "Educational Technology",
+        description: "Faculty of Digital Transformation Engineering revolutionizing learning through tech.",
+        icon: BookOpen
     },
     {
         title: "Software Engineering",
@@ -45,16 +39,6 @@ export const FOCUS_AREAS = [
         title: "Data Science & Engineering",
         description: "Advanced analytics, machine learning models, and big data processing.",
         icon: Database
-    },
-    {
-        title: "Educational Technology",
-        description: "Faculty of Digital Transformation Engineering revolutionizing learning through tech.",
-        icon: BookOpen
-    },
-    {
-        title: "Communication Systems",
-        description: "Advanced research in secure and efficient communication protocols.",
-        icon: Smartphone
     }
 ];
 
@@ -106,43 +90,43 @@ export const PROJECTS: Project[] = [
 export const PUBLICATIONS: Publication[] = [
     {
         id: 'pub1',
-        title: "Design and performance analysis of alcohols sensing using photonic crystal fiber",
-        authors: "Research Team",
-        journal: "Physics Open, Volume 17",
-        year: 2023,
-        link: "https://uftb.ac.bd/research-activities-1/publications/design-and-performance-analysis-of-alcohols-sensing-using-photonic-crystal-fiber-in-terahertz-spectrum-in-physics-open-,volume-17"
+        title: "NOIRBETTIK: A reading comprehension based multiple choice question answering dataset in Bangla language",
+        authors: "T. T. Aurpa, M. S. H. Apu, F. Akter, R. K. Rifat, and M. A. Habib",
+        journal: "Data in Brief, vol. 59",
+        year: 2025,
+        link: "https://doi.org/10.1016/j.dib.2025.111395"
     },
     {
         id: 'pub2',
-        title: "Design of Quasi-Shaped Spectroscopy based Optical Sensor",
-        authors: "Research Team",
-        journal: "Sensing and Bio-Sensing Research, Vol 41",
-        year: 2023,
-        link: "https://uftb.ac.bd/research-activities-1/publications/design-of-quasi-shaped-spectroscopy-based-optical-sensor-for-the-detection-of-alcohol-in-sensing-and-bio-sensing-research-,volume-41-,2023"
+        title: "Sentiment Analysis of public perception toward mob justice",
+        authors: "F. Akter, T. T. Aurpa, F. Islam, M. S. Islam, N. Hossneara, and Md. Ashrafuzzaman",
+        journal: "IEEE Conference",
+        year: 2025,
+        link: "https://doi.org/10.1109/qpain66474.2025.11171704"
     },
     {
         id: 'pub3',
-        title: "BUVOTS: A Blockchain Based Unmanipulated Voting Scheme",
-        authors: "Research Team",
-        journal: "Blockchain Security",
-        year: 2023,
-        link: "https://uftb.ac.bd/research-activities-1/publications/buvots:-a-blockchain-based-unmanipulated-voting-scheme"
+        title: "An Agro Automation System for Endurable Sunflower Disease Recognition: A CNN-Based Transfer Learning Approach",
+        authors: "F. Akter, M. A. Lata, R. Shakil, P. Halder, and K. R. Rashid",
+        journal: "IEEE Conference",
+        year: 2025,
+        link: "https://doi.org/10.1109/qpain66474.2025.11172149"
     },
     {
         id: 'pub4',
-        title: "Object Detection on Dental X-ray Images Using Region-Based CNN",
-        authors: "Research Team",
-        journal: "Medical Imaging",
-        year: 2023,
-        link: "https://uftb.ac.bd/research-activities-1/publications/object-detection-on-dental-x-ray-images-using-region-based-convolutional-neural-networks"
+        title: "Bangla MEDER: Multi-BERT Ensemble Approach for the Recognition of Bangla Medical Entity",
+        authors: "T. T. Aurpa, F. Akter, Md. M. Hasan, S. Ahmed, S. A. Rafiq, F. Khan, and R. Sheikh",
+        journal: "arXiv",
+        year: 2025,
+        link: "https://doi.org/10.48550/arxiv.2512.17769"
     },
     {
         id: 'pub5',
-        title: "Controlling Home Appliances adopting Chatbot using ML",
-        authors: "Research Team",
-        journal: "Smart Home Automation",
-        year: 2023,
-        link: "https://uftb.ac.bd/research-activities-1/publications/controlling-home-appliances-adopting-chatbot-using-machine-learning-approach."
+        title: "PROSHNO BINNASH: Contextual multi-label question answering dataset for low-resource NLP",
+        authors: "R. Khan, T. T. Aurpa, M. S. Rahman, and Md. Ashrafuzzaman",
+        journal: "Data in Brief, vol. 63",
+        year: 2025,
+        link: "https://doi.org/10.1016/j.dib.2025.112261"
     }
 ];
 
@@ -152,9 +136,9 @@ export const MENTORS: Mentor[] = [
         name: "Md. Ashrafuzzaman",
         role: "Assistant Professor",
         department: "Department of Educational Technology and Engineering",
-        email: "ashraf0001@uftb.ac.bd",
+        email: "nxtlab8@gmail.com",
         researchInterest: "Educational Technology, Higher Education, Teacher Education, Curriculum, Assessment and Feedback, Language Education and AI in Education",
-        image: "https://ui-avatars.com/api/?name=Md+Ashrafuzzaman&background=0ea5e9&color=fff",
+        image: "/assets/7.png",
         orcid: "https://orcid.org/0000-0003-2100-9998",
         googleScholar: "https://scholar.google.com/citations?user=MdAshrafuzzaman", // Fallback/Placeholder as CSV link was shared format
         researchGate: "https://www.researchgate.net/profile/Md_Uzzaman4",
@@ -165,62 +149,62 @@ export const MENTORS: Mentor[] = [
         name: "Farzana Akter",
         role: "Assistant Professor",
         department: "IoT and Robotics Engineering",
-        email: "farzana0001@uftb.ac.bd",
+        email: "nxtlab8@gmail.com",
         researchInterest: "Medical Imaging, NLP, Data Analysis, Federated Learning",
-        image: "https://ui-avatars.com/api/?name=Farzana+Akter&background=0369a1&color=fff",
+        image: "/assets/6.png",
         orcid: "https://orcid.org/0000-0003-3017-8742",
         googleScholar: "https://scholar.google.com/citations?user=6fzSuRQAAAAJ&hl=en"
     },
     {
         id: 'm3',
+        name: "Farhana Islam",
+        role: "Assistant Professor",
+        department: "Department of Educational Technology and Engineering",
+        email: "nxtlab8@gmail.com",
+        researchInterest: "Machine Learning, Image Processing",
+        image: "/assets/2.png"
+    },
+    {
+        id: 'm4',
         name: "Sharad Hasan",
         role: "Lecturer",
         department: "Department of Data Science and Engineering",
-        email: "sharad0001@uftb.ac.bd",
+        email: "nxtlab8@gmail.com",
         researchInterest: "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Data Science",
-        image: "https://ui-avatars.com/api/?name=Sharad+Hasan&background=0284c7&color=fff",
+        image: "/assets/5.png",
         googleScholar: "https://scholar.google.com/citations?user=iLVghnEAAAAJ&hl=en",
         linkedIn: "https://www.linkedin.com/in/sharad-hasan/"
     },
     {
-        id: 'm4',
+        id: 'm5',
         name: "Md. Moshiur Rahman",
         role: "Lecturer",
         department: "Department of Software Engineering",
-        email: "moshiur0001@uftb.ac.bd",
+        email: "nxtlab8@gmail.com",
         researchInterest: "Machine Learning, Artificial Intelligence",
-        image: "https://ui-avatars.com/api/?name=Moshiur+Rahman&background=0369a1&color=fff",
+        image: "/assets/3.png",
         linkedIn: "https://www.linkedin.com/in/md-moshiur-b35974194"
     },
     {
-        id: 'm5',
+        id: 'm6',
         name: "Rubel Sheikh",
         role: "Lecturer",
         department: "Educational Technology and Engineering",
-        email: "rubel0003@uftb.ac.bd",
+        email: "nxtlab8@gmail.com",
         researchInterest: "Machine Learning, Deep Learning, NLP, Image Processing",
-        image: "https://ui-avatars.com/api/?name=Rubel+Sheikh&background=0c4a6e&color=fff",
+        image: "/assets/4.png",
         orcid: "https://orcid.org/0000-0002-6824-340X",
         researchGate: "https://www.researchgate.net/profile/Rubel-Sheikh",
         linkedIn: "https://www.linkedin.com/in/rubel-sheikh-0bb572154/"
-    },
-    {
-        id: 'm6',
-        name: "Farhana Islam",
-        role: "Assistant Professor",
-        department: "Department of Educational Technology and Engineering",
-        email: "farhana0001@uftb.ac.bd",
-        researchInterest: "Machine Learning, Image Processing",
-        image: "https://ui-avatars.com/api/?name=Farhana+Islam&background=0ea5e9&color=fff"
     },
     {
         id: 'm7',
         name: "Tanjim Taharat Aurpa",
         role: "Lecturer",
         department: "Department of Data Science and Engineering",
-        email: "taurpa22@gmail.com",
+        email: "nxtlab8@gmail.com",
         researchInterest: "NLP, XAI",
-        image: "https://ui-avatars.com/api/?name=Tanjim+Taharat&background=0284c7&color=fff",
+        image: "/assets/1.png",
         orcid: "https://orcid.org/0000-0003-1471-1316",
         googleScholar: "https://scholar.google.com/citations?user=L2OPFJgAAAAJ&hl=en",
         researchGate: "https://www.researchgate.net/profile/Tanjim-Taharat-Aurpa-2",
@@ -254,18 +238,12 @@ export const EVENTS: Event[] = [
 ];
 
 export const STATS: Stat[] = [
-    { label: "Journals", value: "193", icon: FileText },
-    { label: "Conferences", value: "141", icon: Users },
-    { label: "Funded Research", value: "20", icon: Building },
-    { label: "Awards Won", value: "06", icon: Trophy },
+    { label: "Journal Publications", value: "05", icon: FileText },
+    { label: "Funded Research", value: "2025", icon: Building },
+    { label: "Total Members", value: "25+", icon: Users }
 ];
 
-export const EXTRA_STATS = [
-    { label: "Founded", value: "2018", icon: Calendar },
-    { label: "Faculty Members", value: "43+", icon: GraduationCap },
-    { label: "Regular Students", value: "732+", icon: Users },
-    { label: "Departments", value: "6+", icon: Layers }
-];
+
 
 export const COLLABORATORS = [
     { name: "Korea University", image: "https://uftb.ac.bd/uploads/topics/17371823455930.jpg" },
