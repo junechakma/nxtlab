@@ -58,7 +58,7 @@ export default function HomePage() {
                 <div className="container mx-auto px-6">
                     <SectionHeader title="Research Focus" subtitle="Faculties & Departments" />
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 border-t border-l border-slate-200">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 border-t border-l border-slate-200">
                         {FOCUS_AREAS.map((area, idx) => (
                             <Reveal key={idx} delay={idx * 100} variant="zoom-in" className="contents">
                                 <div className="group p-8 md:p-12 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors cursor-pointer relative overflow-hidden">
@@ -110,7 +110,7 @@ export default function HomePage() {
                                 key={project.id}
                                 delay={index * 150}
                                 variant="slide-up"
-                                className={`group ${index === 0 ? 'md:col-span-2' : ''}`}
+                                className="group"
                             >
                                 <div className="h-full flex flex-col">
                                     <div className="relative overflow-hidden bg-slate-200 aspect-video mb-6 rounded-sm">
