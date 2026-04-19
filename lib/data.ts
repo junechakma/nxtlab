@@ -1,5 +1,5 @@
 import { ShieldCheck, Cpu, Database, BookOpen, Code, Trophy, FileText, Users, Building, Activity, Lock, Smartphone, Calendar, GraduationCap, Layers } from 'lucide-react';
-import { Project, Publication, Mentor, Event, Stat, Slide } from '../types';
+import { Project, Publication, Mentor, MentorCategory, Event, Stat, Slide } from '../types';
 
 export const LAB_NAME = "Nxtlab";
 export const UNIVERSITY_NAME = "University of Frontier Technology Bangladesh";
@@ -135,12 +135,14 @@ export const MENTORS: Mentor[] = [
         id: 'm3',
         name: "Md. Ashrafuzzaman",
         role: "Assistant Professor",
+        category: "Advisor",
         department: "Department of Educational Technology and Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Md. Ashrafuzzaman is an Assistant Professor in the Department of Educational Technology and Engineering at the University of Frontier Technology Bangladesh. He is passionate about transforming education through technology, with a focus on curriculum design, assessment strategies, and the integration of AI in learning environments. He actively contributes to national and international research in higher education and language pedagogy.",
         researchInterest: "Educational Technology, Higher Education, Teacher Education, Curriculum, Assessment and Feedback, Language Education and AI in Education",
         image: "/assets/7.png",
         orcid: "https://orcid.org/0000-0003-2100-9998",
-        googleScholar: "https://scholar.google.com/citations?user=MdAshrafuzzaman", // Fallback/Placeholder as CSV link was shared format
+        googleScholar: "https://scholar.google.com/citations?user=MdAshrafuzzaman",
         researchGate: "https://www.researchgate.net/profile/Md_Uzzaman4",
         linkedIn: "https://www.linkedin.com/in/md-ashrafuzzaman-27464a96"
     },
@@ -148,8 +150,10 @@ export const MENTORS: Mentor[] = [
         id: 'm2',
         name: "Farzana Akter",
         role: "Assistant Professor",
+        category: "Advisor",
         department: "IoT and Robotics Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Farzana Akter is an Assistant Professor in the Department of IoT and Robotics Engineering at UFTB. Her research spans medical imaging, natural language processing, and federated learning. She is dedicated to developing intelligent systems that can assist in clinical decision-making and contribute to advancements in healthcare AI.",
         researchInterest: "Medical Imaging, NLP, Data Analysis, Federated Learning",
         image: "/assets/6.png",
         orcid: "https://orcid.org/0000-0003-3017-8742",
@@ -159,8 +163,10 @@ export const MENTORS: Mentor[] = [
         id: 'm1',
         name: "Tanjim Taharat Aurpa",
         role: "Lecturer",
+        category: "Mentor",
         department: "Department of Data Science and Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Tanjim Taharat Aurpa is a Lecturer in the Department of Data Science and Engineering at UFTB. She specializes in Natural Language Processing and Explainable AI, with a particular interest in low-resource Bangla NLP. Her work includes developing datasets and models for question answering, sentiment analysis, and medical entity recognition in the Bangla language.",
         researchInterest: "NLP, XAI",
         image: "/assets/1.png",
         orcid: "https://orcid.org/0000-0003-1471-1316",
@@ -172,8 +178,10 @@ export const MENTORS: Mentor[] = [
         id: 'm4',
         name: "Farhana Islam",
         role: "Assistant Professor",
+        category: "Mentor",
         department: "Department of Educational Technology and Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Farhana Islam is an Assistant Professor in the Department of Educational Technology and Engineering at UFTB. Her research focuses on machine learning and image processing, exploring how intelligent systems can be applied to solve real-world educational and engineering challenges.",
         researchInterest: "Machine Learning, Image Processing",
         image: "/assets/2.png"
     },
@@ -181,8 +189,10 @@ export const MENTORS: Mentor[] = [
         id: 'm6',
         name: "Md. Moshiur Rahman",
         role: "Lecturer",
+        category: "Mentor",
         department: "Department of Software Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Md. Moshiur Rahman is a Lecturer in the Department of Software Engineering at UFTB. He is interested in machine learning and artificial intelligence, working on projects that bridge theoretical AI research and practical software applications.",
         researchInterest: "Machine Learning, Artificial Intelligence",
         image: "/assets/3.png",
         linkedIn: "https://www.linkedin.com/in/md-moshiur-b35974194"
@@ -191,8 +201,10 @@ export const MENTORS: Mentor[] = [
         id: 'm7',
         name: "Rubel Sheikh",
         role: "Lecturer",
+        category: "Researcher",
         department: "Educational Technology and Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Rubel Sheikh is a Lecturer in the Department of Educational Technology and Engineering at UFTB. His research spans machine learning, deep learning, NLP, and image processing. He is committed to advancing AI-driven solutions for education and healthcare, and has contributed to several peer-reviewed publications in these domains.",
         researchInterest: "Machine Learning, Deep Learning, NLP, Image Processing",
         image: "/assets/4.png",
         orcid: "https://orcid.org/0000-0002-6824-340X",
@@ -203,8 +215,10 @@ export const MENTORS: Mentor[] = [
         id: 'm5',
         name: "Sharad Hasan",
         role: "Lecturer",
+        category: "Researcher",
         department: "Department of Data Science and Engineering",
         email: "nxtlab8@gmail.com",
+        bio: "Sharad Hasan is a Lecturer in the Department of Data Science and Engineering at UFTB. His research interests include machine learning, deep learning, computer vision, and natural language processing. He is passionate about applying data-driven approaches to tackle complex problems across various domains.",
         researchInterest: "Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Data Science",
         image: "/assets/5.png",
         googleScholar: "https://scholar.google.com/citations?user=iLVghnEAAAAJ&hl=en",

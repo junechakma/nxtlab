@@ -24,13 +24,17 @@ export interface Publication {
     link: string;
 }
 
+export type MentorCategory = 'Advisor' | 'Mentor' | 'Researcher';
+
 export interface Mentor {
     id: string;
     name: string;
     role: string;
     department: string;
     image: string;
+    category: MentorCategory;
     email?: string;
+    bio?: string;
     researchInterest?: string;
     googleScholar?: string;
     researchGate?: string;

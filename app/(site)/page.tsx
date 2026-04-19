@@ -9,7 +9,6 @@ import {
     PROJECTS,
     PUBLICATIONS,
     MENTORS,
-    EVENTS,
     FOCUS_AREAS,
     STATS,
     COLLABORATORS,
@@ -45,7 +44,6 @@ export default function HomePage() {
     const projects = PROJECTS;
     const publications = PUBLICATIONS;
     const mentors = MENTORS;
-    const events = EVENTS;
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -230,7 +228,7 @@ export default function HomePage() {
             {/* Mentors - Grid */}
             <section id="mentors" className="py-16 md:py-32 bg-white">
                 <div className="container mx-auto px-6">
-                    <SectionHeader title="Our People" subtitle="Researchers & Faculty" />
+                    <SectionHeader title="Our Mentors" subtitle="Researchers & Faculty" />
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 border-slate-200">
                         {mentors.slice(0, 6).map((mentor, idx) => (
@@ -274,17 +272,6 @@ export default function HomePage() {
                             Meet The Full Team <ArrowRight className="w-5 h-5" />
                         </a>
                     </Reveal>
-                </div>
-            </section>
-
-            {/* Events - Clean Layout */}
-            <section id="events" className="py-16 md:py-32 bg-slate-50 border-t border-slate-200 overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <SectionHeader title="Recent Events" subtitle="Workshops & Seminars" />
-
-                    <div className="flex flex-col items-center justify-center py-12 text-center">
-                        <p className="text-xl text-slate-400 font-medium">No events for now</p>
-                    </div>
                 </div>
             </section>
 

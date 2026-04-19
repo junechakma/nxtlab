@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Beaker, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import { LAB_NAME } from '../../lib/data';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -38,7 +39,7 @@ const Navigation: React.FC = () => {
         { name: 'Home', href: '/' },
         { name: 'Projects', href: '/projects' },
         { name: 'Publications', href: '/publications' },
-        { name: 'People', href: '/people' },
+        { name: 'Mentors', href: '/people' },
         { name: 'Events', href: '/events' },
         { name: 'News', href: '/news' },
         { name: 'About', href: '/about' },
@@ -54,15 +55,15 @@ const Navigation: React.FC = () => {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group cursor-pointer" style={{ zIndex: 60 }}>
-                    <div className={`w-10 h-10 rounded-none border ${isDarkText ? 'border-brand-600 text-brand-600' : 'border-white text-white'} flex items-center justify-center transition-colors`}>
-                        <Beaker className="w-5 h-5" />
+                    <div className="w-10 h-10 flex items-center justify-center">
+                        <Image src="/NXTLAB.png" alt="Nxtlab logo" width={40} height={40} className="object-contain" />
                     </div>
                     <div className="flex flex-col">
                         <span className={`text-2xl font-display font-bold leading-none ${isDarkText ? 'text-slate-900' : 'text-white'}`}>
                             {LAB_NAME}
                         </span>
                         <span className={`text-[10px] tracking-[0.2em] uppercase ${isDarkText ? 'text-slate-500' : 'text-slate-300'}`}>
-                            Research & Innovation
+                            Next Generation Lab
                         </span>
                     </div>
                 </Link>
@@ -78,7 +79,7 @@ const Navigation: React.FC = () => {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm tracking-wide transition-all hover:tracking-wider ${isActive
+                                className={`text-[15px] tracking-wide transition-colors ${isActive
                                     ? (isDarkText ? 'text-brand-600 font-bold' : 'text-white font-bold border-b-2 border-white pb-1')
                                     : (isDarkText ? 'text-slate-600 font-medium hover:text-brand-600' : 'text-slate-300 font-medium hover:text-white')
                                     }`}
