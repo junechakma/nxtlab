@@ -201,7 +201,7 @@ export const MENTORS: Mentor[] = [
         id: 'm7',
         name: "Rubel Sheikh",
         role: "Lecturer",
-        category: "Researcher",
+        category: "Mentor",
         department: "Educational Technology and Engineering",
         email: "nxtlab8@gmail.com",
         bio: "Rubel Sheikh is a Lecturer in the Department of Educational Technology and Engineering at UFTB. His research spans machine learning, deep learning, NLP, and image processing. He is committed to advancing AI-driven solutions for education and healthcare, and has contributed to several peer-reviewed publications in these domains.",
@@ -215,7 +215,7 @@ export const MENTORS: Mentor[] = [
         id: 'm5',
         name: "Sharad Hasan",
         role: "Lecturer",
-        category: "Researcher",
+        category: "Mentor",
         department: "Department of Data Science and Engineering",
         email: "nxtlab8@gmail.com",
         bio: "Sharad Hasan is a Lecturer in the Department of Data Science and Engineering at UFTB. His research interests include machine learning, deep learning, computer vision, and natural language processing. He is passionate about applying data-driven approaches to tackle complex problems across various domains.",
@@ -223,6 +223,60 @@ export const MENTORS: Mentor[] = [
         image: "/assets/5.png",
         googleScholar: "https://scholar.google.com/citations?user=iLVghnEAAAAJ&hl=en",
         linkedIn: "https://www.linkedin.com/in/sharad-hasan/"
+    },
+    {
+        id: 'r4',
+        name: "Sabbir Ahmed",
+        role: "Research Associate",
+        category: "Researcher",
+        department: "Institute of Technical and Vocational Education and Training (ITVET), BOU | MSc Student, Dept. of EDTE, University of Frontier Technology, Bangladesh",
+        email: "1902001@icte.uftb.ac.bd",
+        image: "/assets/researchers/sabbir.jpg"
+    },
+    {
+        id: 'r2',
+        name: "Md. Taslim Arif",
+        role: "Lecturer",
+        category: "Researcher",
+        department: "Dept. of CSE, DIU | BSc (Eng.) in IRE, Dept. of IRE, University of Frontier Technology, Bangladesh",
+        email: "1801030@iot.uftb.ac.bd",
+        image: "/NXTLAB.png"
+    },
+    {
+        id: 'r5',
+        name: "Swapnil Tarafdar",
+        role: "Lecturer",
+        category: "Researcher",
+        department: "Department of CSE, Daffodil International University | MSc Student, Dept. of Educational Technology and Engineering, University of Frontier Technology, Bangladesh",
+        email: "1902042@icte.uftb.ac.bd",
+        image: "/assets/researchers/swpnil.jpg"
+    },
+    {
+        id: 'r6',
+        name: "Sumona Afroz",
+        role: "Lecturer",
+        category: "Researcher",
+        department: "Dept. of CSE, Daffodil International University | MSc Student, Dept. of Educational Technology and Engineering, University of Frontier Technology, Bangladesh",
+        email: "1902025@icte.uftb.ac.bd",
+        image: "/assets/researchers/chadnee.jpg"
+    },
+    {
+        id: 'r1',
+        name: "Md. Shahriar Hossain Apu",
+        role: "Lecturer",
+        category: "Researcher",
+        department: "Dept. of CSE, Leading University, Sylhet | MSc Student, Dept. of IRE, University of Frontier Technology, Bangladesh",
+        email: "1901036@iot.uftb.ac.bd",
+        image: "/NXTLAB.png"
+    },
+    {
+        id: 'r3',
+        name: "Bakhtiar Muiz",
+        role: "Lecturer",
+        category: "Researcher",
+        department: "Dept. of CSE, DIU | BSc (Eng.) in IRE, Dept. of IRE, University of Frontier Technology, Bangladesh",
+        email: "1801045@iot.uftb.ac.bd",
+        image: "/NXTLAB.png"
     }
 ];
 
